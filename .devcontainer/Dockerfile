@@ -84,8 +84,8 @@ RUN apt-get update \
     && usermod -aG docker $USERNAME
 
 RUN curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.9.0/kind-linux-amd64 \
-    chmod +x ./kind \
-    mv ./kind /usr/local/bin/kind
+    && chmod +x ./kind \
+    && mv ./kind /usr/local/bin/kind
 
 RUN curl -sSL -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
     && chmod +x /usr/local/bin/kubectl
